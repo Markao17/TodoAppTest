@@ -16,13 +16,12 @@ export default function TodoItem({ item, index, todoList, setTodoList }) {
       todo.name === name ? { ...todo, completed: !todo.completed } : todo
     );
     setTodoList(newArray);
-    setChecked(!checked);
   }
 
   return (
     <li className={styles.todoitem} key={index}>
       <span
-        className={checked ? styles.todoitem__checked : ""}
+        className={item.completed ? styles.todoitem__checked : ""}
         onClick={() => handleCheck(item.name)}
       >
         {item.name}
